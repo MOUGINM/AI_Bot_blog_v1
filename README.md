@@ -1,1 +1,6 @@
 # blog_with_gpt
+
+![DEMO](https://github.com/MOUGINM/project_picture/blob/main/blog_with_gpt_3.5/1v1.png)
+![DEMO](https://github.com/MOUGINM/project_picture/blob/main/blog_with_gpt_3.5/1v2.png)
+![DEMO](https://github.com/MOUGINM/project_picture/blob/main/blog_with_gpt_3.5/1v3.png)
+
