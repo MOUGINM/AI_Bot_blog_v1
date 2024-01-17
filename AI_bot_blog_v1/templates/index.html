@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>🤖 AI Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2297c9;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #blogContent {
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        #blogImage {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🤖 Générer un Nouveau Blog</h1>
+</div>
+
+<div class="container">
+    <button onclick="generateBlog()">Générer un Nouveau Blog</button>
+    <div id="blogContent">
+    </div>
+</div>
+
+<script>
+    function generateBlog() {
+     fetch('/generate_blog?image_prompt=Technologie')
+         .then(response => response.json())
+         .then(data => {
+             let contentHtml = '';
+             data.forEach(item => {
+                 if (item.type === 'blog') {
+                     contentHtml += `<h2>${item.title}</h2><p>${item.content}</p>`;
+                 }
+             });
+             document.getElementById('blogContent').innerHTML = contentHtml;
+         })
+         .catch(error => {
+             console.error('Erreur lors de la génération du blog:', error);
+         });
+    }
+ </script>
+ 
+
+</body>
+</html>
