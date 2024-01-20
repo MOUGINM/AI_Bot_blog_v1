@@ -1,7 +1,7 @@
 # blog_with_gpt
 
 ## :newspaper: **AI Bot Blog v1**
-
+(demo)
 You can use with your gpt api key
 
 ![DEMO](https://github.com/MOUGINM/project_picture/blob/main/blog_with_gpt_3.5/2v1.png)
